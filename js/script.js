@@ -165,7 +165,7 @@ function testFactorial(a) {
    }
 }
 testFactorial(8);*/
-//сумма четных чисел от 0 до а 
+//сумма четных чисел от 0 до а
 /*function testWhile(a) {
    var x = 0;
    var y = 1;
@@ -224,7 +224,6 @@ function naturalNumber(n) {
 }
 console.log(naturalNumber(8));*/
 
-
 //фрилансер
 
 /*console.log('Учим JS');
@@ -282,11 +281,6 @@ if (typeof userName === 'undefined') {
    console.log('Переменная определена');
 }*/
 //строки
-let userAge = 32;
+let userAge = 38;
 let userAgeInfo = `Возраст ${userAge}`;
 console.log(userAgeInfo);
-
-
-
-
-
