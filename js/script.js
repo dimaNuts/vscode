@@ -47,56 +47,7 @@ var firstCharacter = lowerString[0];
 var firstCharacterUpper = firstCharacter.toUpperCase();
 var restOfString = lowerString.slice(1);
 console.log(firstCharacterUpper + restOfString); */
-/*function testSum(a, b) {
-   return a + b;
-}
-let result = testSum(1, 9);
-console.log(result);
-*/
-/*function showMessage() {
-   let message = " Hi, Im JS!";
-   alert(message);
-}
-showMessage();
-//alert(message); будет ошибка, т.к. переменная видна только внутри ф-ции*/
-/*let userName = 'Вася';
-function showMessage() {
-   userName = 'Петя'
-   let message = 'Привет, ' + userName;
-   alert(message);
-}
-alert(userName);
-showMessage();
-alert(userName);*/ // ф-ция обладает полным доступом к внешним переменным и может изменять их значение
-/*внешняя переменная используется,только если внутри ф-ции не такой локальной.
-если одноименная переменная объявляется внутри ф-ции, тогда она перекрывает внешнюю.
-let userName = 'Вася';
-function showMessage() {
-   let userName = 'Петя';
-   let message = 'Привет, ' + userName;
-   alert(message);
-}
-showMessage();
-alert(userName);*/
-/*// если параметр text не указан, то значением будет "text no add"
-function showMessage(from, text = "text no add") {
-   alert(from + ": " + text);
-}
-showMessage("Ann");*/
-/*//вызов return может быть несколько
-function checkAge(age) {
-   if (age > 25) {
-      return true;
-   } else {
-      return confirm('А родиетели разрешили?');
-   }
-}
-let age = prompt('Сколько вам лет?', 15);
-if (checkAge(age)) {
-   alert('Доступ получен');
-} else {
-   alert('Доступ закрыт');
-}*/
+
 /*
 function testOperation(a, b) {
    return ((a * b) % (a + b)) * 2;
@@ -280,7 +231,17 @@ if (typeof userName === 'undefined') {
 } else {
    console.log('Переменная определена');
 }*/
-//строки
-let userAge = 38;
-let userAgeInfo = `Возраст ${userAge}`;
-console.log(userAgeInfo);
+
+let sheepCounted = 0;
+
+while (sheepCounted < 10) {
+  console.log(`Counted sheep ${sheepCounted + 1}!`);
+  sheepCounted++;
+}
+
+console.log(`ZZZZzzzzzzzzzzzzzzz!!!!`);
+
+for (let sheepCounted = 0; sheepCounted < 10; sheepCounted++) {
+  console.log(`Counted sheep ${sheepCounted + 1}!!!`);
+}
+console.log("ZZZZZZZZZZZZZZZzzzzzzzzzzzzzzzzzzzzz!!!!");
