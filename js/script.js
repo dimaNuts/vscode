@@ -232,16 +232,12 @@ if (typeof userName === 'undefined') {
    console.log('Переменная определена');
 }*/
 
-let sheepCounted = 0;
-
-while (sheepCounted < 10) {
-  console.log(`Counted sheep ${sheepCounted + 1}!`);
-  sheepCounted++;
+let result = 3;
+// на одну итерацию больше, если приращение в консоли
+while (result < 10000) {
+  console.log((result *= 3));
 }
 
-console.log(`ZZZZzzzzzzzzzzzzzzz!!!!`);
-
-for (let sheepCounted = 0; sheepCounted < 10; sheepCounted++) {
-  console.log(`Counted sheep ${sheepCounted + 1}!!!`);
+for (let result = 3; result < 10000; result *= 3) {
+  console.log(result);
 }
-console.log("ZZZZZZZZZZZZZZZzzzzzzzzzzzzzzzzzzzzz!!!!");
