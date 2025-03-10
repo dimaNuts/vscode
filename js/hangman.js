@@ -1,5 +1,12 @@
 // создаём массив со словами
-let words = ["программа", "макака", "прекрасный", "оладушек"];
+let words = [
+  "программа",
+  "макака",
+  "прекрасный",
+  "оладушек",
+  "блин",
+  "колодец",
+];
 
 // выбраем случайное слово
 let word = words[Math.floor(Math.random() * words.length)];
@@ -13,33 +20,41 @@ for (let i = 0; i < lenWord; i++) {
 
 // оставшиеся буквы
 let remainingLetters = word.length;
+// число попыток отгадать слово
+let tryCount = lenWord + 2;
+alert(`Число попыток отгадать слово: ${tryCount}`);
 
 // игровой цикл
-
 while (remainingLetters > 0) {
   // показываем состояние игры
-  alert(answerArray.join(""));
+  alert(`Количество отгаданных букв 
+    ${answerArray.join("")}`);
 
   // запрашиваем вариант ответа
   let guess = prompt("Угадайте букву или нажмите Отмена для выхода из игры.");
 
-  if (guess === null) {
+  if (guess === null || tryCount === 0) {
     // выходим из игрового цикла
+    alert(`Вы вышли из игры или у вас закончилось число попыток!`);
     break;
   } else if (guess.length !== 1) {
     alert("Пожалуйста, введите одну букву");
   } else {
     // обновляем состояние игры
-    for (let i = 0; i < word.length; i++) {
-      if (guess === word[i]) {
-        answerArray[i] = guess;
+    for (let i = 0; i < lenWord; i++) {
+      let smallLetter = guess.toLowerCase();
+      if (smallLetter === word[i]) {
+        answerArray[i] = smallLetter;
         remainingLetters--;
       }
     }
   }
+  tryCount--;
+  alert(`Осталось попыток: ${tryCount}`);
   // конец игрового цикла
 }
 
 // отображаем ответ и поздравляем игрока
-alert(answerArray.join(""));
+alert(`Ваш ответ:
+  ${answerArray.join("")}`);
 alert(`Отлично!!! Было загадано слово ${word}!`);
