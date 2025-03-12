@@ -37,13 +37,18 @@ while (remainingLetters > 0) {
     // выходим из игрового цикла
     alert(`Вы вышли из игры или у вас закончилось число попыток!`);
     break;
-  } else if (guess.length !== 1) {
+  } else if (guess.length !== 1 || !guess) {
     alert("Пожалуйста, введите одну букву");
+    tryCount++;
   } else {
     // обновляем состояние игры
     for (let i = 0; i < lenWord; i++) {
       let smallLetter = guess.toLowerCase();
-      if (smallLetter === word[i]) {
+      if (answerArray[i] === smallLetter) {
+        alert(`Такая буква уже есть !`);
+        tryCount++;
+        break;
+      } else if (smallLetter === word[i]) {
         answerArray[i] = smallLetter;
         remainingLetters--;
       }
