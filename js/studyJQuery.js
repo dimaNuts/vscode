@@ -9,3 +9,10 @@ if (window.jQuery) {
 }
 
 // поместить в конец страницы новый элемент p
+$("body").append("<p> It is new paragraph</p>");
+
+// несколько
+for (let i = 0; i < 3; i++) {
+  let hobby = prompt("Input you favorite hobby", "");
+  $("body").append("<p>" + hobby + "</p>");
+}
