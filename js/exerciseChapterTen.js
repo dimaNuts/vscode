@@ -38,11 +38,36 @@
     }
   };
 
-  let stopID = setInterval(moveHeading, 30);
+  // setInterval(moveHeading, 30);
 
-  // stop move
-  let stop = () => {
+  // faster move heading & total click
+  let total = 0;
+  let stopID;
+  let time = 50;
+  // start movie heading
+  let start = (time) => {
+    stopID = setInterval(moveHeading, time);
+  };
+  // stop heading
+  let stop = (stopID) => {
     clearInterval(stopID);
   };
-  $("h1").click(stop);
+
+  start(time);
+  $("h1").click(() => {
+    stop(stopID);
+    // fast move
+    time -= 15;
+    start(time);
+    // show total click on heading
+    $("h2").text(`Try stop! Click on face! Total click: ${(total += 1)}`);
+    $("h1").text(`(O-O)`);
+
+    // end play
+    if (total > 7) {
+      stop(stopID);
+      $("h2").text("You win!!!");
+      $("h1").text(`(*.*)`);
+    }
+  });
 })();
