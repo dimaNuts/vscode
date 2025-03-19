@@ -38,8 +38,6 @@
     }
   };
 
-  // setInterval(moveHeading, 30);
-
   // faster move heading & total click
   let total = 0;
   let stopID;
@@ -53,6 +51,7 @@
     clearInterval(stopID);
   };
 
+  // start game
   start(time);
   $("h1").click(() => {
     stop(stopID);
