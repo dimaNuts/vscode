@@ -60,14 +60,16 @@
     time -= 15;
     start(time);
     // show total click on heading
-    $("h2").text(`Try stop! Click on face! Total click: ${(total += 1)}`);
-    $("h1").text(`(O-O)`);
+    $("h2")
+      .text(`Try stop! Click on face! Total click: ${(total += 1)}`)
+      .css("color", "blue");
+    $("h1").text(`(O.O)`).css("color", "red");
 
     // end play
     if (total > 7) {
       stop(stopID);
-      $("h2").text("You win!!!");
-      $("h1").text(`(*.*)`);
+      $("h2").text("You win!!!").css("color", "orange");
+      $("h1").text(`(*.*)`).css("color", "grey");
     }
   });
 })();
