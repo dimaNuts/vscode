@@ -40,7 +40,7 @@ Car.prototype.draw = function draw() {
 
 // move
 Car.prototype.moveRight = function moveRight() {
-  this.x += 5;
+  this.x += this.speed;
 
   this.carElement.css({
     left: this.x,
@@ -49,7 +49,7 @@ Car.prototype.moveRight = function moveRight() {
 };
 
 Car.prototype.moveLeft = function moveLeft() {
-  this.x -= 5;
+  this.x -= this.speed;
 
   this.carElement.css({
     left: this.x,
@@ -58,7 +58,7 @@ Car.prototype.moveLeft = function moveLeft() {
 };
 
 Car.prototype.moveUP = function moveUp() {
-  this.y -= 5;
+  this.y -= this.speed;
 
   this.carElement.css({
     left: this.x,
@@ -67,7 +67,7 @@ Car.prototype.moveUP = function moveUp() {
 };
 
 Car.prototype.moveDown = function moveDown() {
-  this.y += 5;
+  this.y += this.speed;
 
   this.carElement.css({
     left: this.x,
