@@ -1,31 +1,9 @@
-/*
-let dog = {
-	name: "Оладушек",
-	legs: 4,
-	isAwesome: true,
-  };
-  
-  // add method
-  dog.bark = function () {
-	console.log(`Гав!...гав!гав! Меня зовут ${this.name}!`);
-  };
-  
-  let speak = function () {
-	console.log(`${this.sound}! My name is ${this.name}!`);
-  };
-  
-  let cat = {
-	name: "Варежка",
-	sound: "Мяу",
-	speak: speak,
-  };
-  
-  dog.speak = speak;
-*/
 // функция конструктор
-let Car = function (x, y, draw) {
+let Car = function (x, y) {
   this.x = x;
   this.y = y;
+  this.speed = 5;
+  this.draw();
 };
 
 // draw car
