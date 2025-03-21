@@ -1,26 +1,27 @@
+/*
 let dog = {
-  name: "Оладушек",
-  legs: 4,
-  isAwesome: true,
-};
-
-// add method
-dog.bark = function () {
-  console.log(`Гав!...гав!гав! Меня зовут ${this.name}!`);
-};
-
-let speak = function () {
-  console.log(`${this.sound}! My name is ${this.name}!`);
-};
-
-let cat = {
-  name: "Варежка",
-  sound: "Мяу",
-  speak: speak,
-};
-
-dog.speak = speak;
-
+	name: "Оладушек",
+	legs: 4,
+	isAwesome: true,
+  };
+  
+  // add method
+  dog.bark = function () {
+	console.log(`Гав!...гав!гав! Меня зовут ${this.name}!`);
+  };
+  
+  let speak = function () {
+	console.log(`${this.sound}! My name is ${this.name}!`);
+  };
+  
+  let cat = {
+	name: "Варежка",
+	sound: "Мяу",
+	speak: speak,
+  };
+  
+  dog.speak = speak;
+*/
 // функция конструктор
 let Car = function (x, y) {
   this.x = x;
@@ -28,7 +29,7 @@ let Car = function (x, y) {
 };
 
 // draw car
-let drawCar = function (car) {
+let drawCar = function drawCar(car) {
   let carHtml = '<img src="src/carJaguar.png" width="250"  height="250">';
   let carElement = $(carHtml);
 
@@ -42,14 +43,11 @@ let drawCar = function (car) {
 };
 
 // drawCar(jaguar);
-
-let jaguarPlus = new Car(300, 200);
-
 // drawCar(jaguarPlus);
 
 // добавляем метод draw к прототипу Car(не забыть про this)
 
-Car.prototype.draw = function () {
+Car.prototype.draw = function draw() {
   let carHtml = '<img src="src/carJaguar.png" width="250"  height="250">';
   this.carElement = $(carHtml);
 
@@ -101,3 +99,4 @@ Car.prototype.moveDown = function moveDown() {
 
 let jaguar = new Car(10, 20);
 jaguar.draw();
+let jaguarPlus = new Car(300, 200);
