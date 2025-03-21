@@ -2,7 +2,6 @@
 let Car = function (x, y) {
   this.x = x;
   this.y = y;
-  this.speed = 5;
   this.draw();
 };
 
@@ -26,7 +25,7 @@ let drawCar = function drawCar(car) {
 // добавляем метод draw к прототипу Car(не забыть про this)
 
 Car.prototype.draw = function draw() {
-  let carHtml = '<img src="src/carJaguar.png" width="250"  height="250">';
+  let carHtml = '<img src="src/jaguarXJ.webp" width="250"  height="250">';
   this.carElement = $(carHtml);
 
   this.carElement.css({
@@ -39,8 +38,8 @@ Car.prototype.draw = function draw() {
 };
 
 // move
-Car.prototype.moveRight = function moveRight() {
-  this.x += this.speed;
+Car.prototype.moveRight = function moveRight(offset) {
+  this.x += offset;
 
   this.carElement.css({
     left: this.x,
@@ -48,8 +47,8 @@ Car.prototype.moveRight = function moveRight() {
   });
 };
 
-Car.prototype.moveLeft = function moveLeft() {
-  this.x -= this.speed;
+Car.prototype.moveLeft = function moveLeft(offset) {
+  this.x -= offset;
 
   this.carElement.css({
     left: this.x,
@@ -57,8 +56,8 @@ Car.prototype.moveLeft = function moveLeft() {
   });
 };
 
-Car.prototype.moveUP = function moveUp() {
-  this.y -= this.speed;
+Car.prototype.moveUP = function moveUp(offset) {
+  this.y -= offset;
 
   this.carElement.css({
     left: this.x,
@@ -66,8 +65,8 @@ Car.prototype.moveUP = function moveUp() {
   });
 };
 
-Car.prototype.moveDown = function moveDown() {
-  this.y += this.speed;
+Car.prototype.moveDown = function moveDown(offset) {
+  this.y += offset;
 
   this.carElement.css({
     left: this.x,
@@ -75,5 +74,21 @@ Car.prototype.moveDown = function moveDown() {
   });
 };
 
-let jaguar = new Car(10, 20);
-let jaguarPlus = new Car(300, 200);
+let jaguar = new Car(10, 10);
+let jaguarPlus = new Car(100, 300);
+
+let frequencyMove = 20;
+let offsetJaguar = Math.random() * 5;
+let offsetJaguarPlus = Math.random() * 5;
+
+// get id for stop moving and moving right for car
+let stopId = setInterval(() => {
+  jaguar.moveRight(offsetJaguar);
+  jaguarPlus.moveRight(offsetJaguarPlus);
+}, frequencyMove);
+
+// time for stop
+let stopTime = 3000;
+setTimeout(() => {
+  clearInterval(stopId);
+}, stopTime);
