@@ -2,9 +2,8 @@
 let myFriends = ["Олег", "Нина", "Платон", "Ольга", "Саша", "Ирина"];
 
 // создаём для каждого имени по одному элементу p
-let lenarr = myFriends.length;
 
-for (let i = 0; i < lenarr; i++) {
+for (let i = 0, max = myFriends.length; i < max; i++) {
   $("body").append(`<p>${myFriends[i]}</p>`);
 }
 
